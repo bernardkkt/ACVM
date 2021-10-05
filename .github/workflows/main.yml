@@ -34,5 +34,5 @@ jobs:
           action: build
 
       # Runs a single command using the runners shell
-      - name: List all files under current build folder
-        run: ls -lah build/
+      - name: List all files under current build/Release folder
+        run: ls -lah build/Release/

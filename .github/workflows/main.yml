@@ -36,3 +36,12 @@ jobs:
       # Runs a single command using the runners shell
       - name: List all files under current build/Release folder
         run: ls -lah build/Release/
+
+      # Compress the artifact
+      # - name: Compress the build artifact into a ZIP file
+      #   run: zip -vr ACVM.zip build/Release/ACVM.app
+
+      - uses: actions/upload-artifact@v2.2.4
+        with:
+          name: build
+          path: build/Release/ACVM.app

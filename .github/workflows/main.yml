@@ -38,10 +38,11 @@ jobs:
         run: ls -lah build/Release/
 
       # Compress the artifact
-      # - name: Compress the build artifact into a ZIP file
-      #   run: zip -vr ACVM.zip build/Release/ACVM.app
+      - name: Compress the build artifact into a ZIP file
+        run: zip -vr ACVM.zip build/Release/ACVM.app
 
+      # Upload artifact
       - uses: actions/upload-artifact@v2.2.4
         with:
           name: build
-          path: build/Release/ACVM.app
+          path: ACVM.zip
